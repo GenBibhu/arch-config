@@ -1,0 +1,95 @@
+# Global settings
+add_newline = true
+command_timeout = 1000
+
+# Prompt format
+format = """
+[┌───── system: ](bold #4affff)$os$username$hostname
+[│ dev: ](bold #ff4aff)$directory
+[└─](bold white) $character
+"""
+
+# Operating System
+[os]
+format = "[$symbol ]($style)"
+style = "bold white"
+disabled = false
+
+[os.symbols]
+Arch = " "
+
+# Username and Hostname with neon-inspired coloring
+[username]
+style_user = "#4affff bold"
+style_root = "#ff4a4a bold"
+format = "[$user]($style)@"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname](bold #ff4aff) "
+disabled = false
+
+# Directory with more distinctive styling
+[directory]
+format = "[$path]($style)"
+style = "bold #4a4aff"
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = ""
+
+# Git with vibrant neon colors
+[git_branch]
+symbol = " 󰘬 "
+format = "on [$symbol$branch]($style) "
+style = "bold #00ff00"
+
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+style = "bold #ffff00"
+conflicted = "  "
+ahead = " ⇡ "
+behind = " ⇣ "
+diverged = " ⇕ "
+untracked = " ? "
+stashed = "  "
+modified = "   "
+staged = "  "
+deleted = "  "
+
+[python]
+format = '[🐍 ${version}]($style)'
+style = "bold #4affff"
+detect_files = ["pyproject.toml", "requirements.txt", "setup.py", "main.py"]
+detect_extensions = ["py"]
+
+# Conda configuration
+[conda]
+format = '[🌱 $environment]($style)'
+style = "bold #ff4aff"
+
+# Force show runtime even if no specific environment is detected
+[env_var]
+variable = "STARSHIP_RUNTIME_SHOW"
+default = "true"
+format = "[💡 Placeholder]($style)"
+style = "bold #00ff00"
+
+# Node.js with neon styling
+[nodejs]
+symbol = " 🔷 "
+format = "[$symbol($version )]($style)"
+style = "bold #4affff"
+detect_extensions = ["js", "ts", "jsx", "tsx"]
+
+# Rust with intense coloring
+[rust]
+symbol = " 🦀 "
+format = "[$symbol($version )]($style)"
+style = "bold #ff4a4a"
+
+# Command Character with electric feel
+[character]
+success_symbol = "[➜](bold #00ff00)"
+error_symbol = "[✗](bold #ff0000)"
