@@ -130,4 +130,4 @@ Notable keymaps configured by plugins:
 
 ## License
 
-No license file is currently included. Add one before reusing or distributing this configuration outside personal use.
+Released under the MIT License. See `LICENSE` for details.
